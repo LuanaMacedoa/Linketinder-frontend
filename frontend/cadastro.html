@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro - Linketinder</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/cadastro.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+        <input type="text" placeholder="Search">
+    </nav>
+    <div id="container-cadastro">
+        <div class="form-selector">
+            <a href="index.html">
+                <img src="img/Left-arrow.svg" alt="">
+            </a>
+            <button id="btn-candidato" class="active">Candidato</button>
+            <button id="btn-empresa">Empresa</button>
+        </div>
+
+        <form id="form-candidato">
+            <h3>Cadastro de Candidato</h3>
+            <label for="cand-nome">Nome:</label>
+            <input type="text" id="cand-nome" name="cand-nome" placeholder="Digite seu nome completo">
+
+            <label for="cand-email">E-mail:</label>
+            <input type="email" id="cand-email" name="cand-email" placeholder="Digite seu email">
+
+            <label for="cand-cpf">CPF:</label>
+            <input type="text" id="cand-cpf" name="cand-cpf" placeholder="XXX.XXX.XXX-XX">
+
+            <label for="cand-idade">Idade:</label>
+            <input type="number" id="cand-idade" name="cand-idade" placeholder="Sua idade">
+
+            <label for="cand-estado">Estado:</label>
+            <input type="text" id="cand-estado" name="cand-estado" placeholder="Seu estado">
+
+            <label for="cand-cep">CEP:</label>
+            <input type="text" id="cand-cep" name="cand-cep" placeholder="XXXXX-XXX">
+
+            <label for="cand-skills">Skills:</label>
+            <input type="text" id="cand-skills" name="Skills-candidato" placeholder="Suas skills:">
+
+            <label for="cand-descricao">Descrição Pessoal</label>
+            <textarea id="cand-descricao" name="cand-descricao" rows="3" placeholder="Fale um pouco sobre você"></textarea>
+
+            <button type="submit">Cadastrar</button>
+        </form>
+
+     <form id="form-empresa" style="display: none;">
+        <h3>Cadastro de Empresa</h3>
+        <label for="emp-nome">Nome da Empresa:</label>
+        <input type="text" id="emp-nome" name="emp-nome" placeholder="Digite o nome da empresa">
+
+        <label for="emp-email">E-mail Corporativo:</label>
+        <input type="email" id="emp-email" name="emp-email" placeholder="Digite o email da empresa">
+
+        <label for="emp-cnpj">CNPJ:</label>
+        <input type="text" id="emp-cnpj" name="emp-cnpj" placeholder="XX.XXX.XXX/0001-XX">
+
+        <label for="emp-pais">País:</label>
+        <input type="text" id="emp-pais" name="emp-pais" placeholder="País da empresa">
+
+        <label for="emp-estado">Estado:</label>
+        <input type="text" id="emp-estado" name="emp-estado" placeholder="Estado da empresa">
+
+        <label for="emp-cep">CEP:</label>
+        <input type="text" id="emp-cep" name="emp-cep" placeholder="XXXXX-XXX">
+
+        <label for="emp-skills">Skills:</label>
+        <input type="text" id="emp-skills" name="Skills-empresa" placeholder="Skills procuradas:">
+
+        <label for="emp-descricao">Descrição da Empresa</label>
+        <textarea id="emp-descricao" name="emp-descricao" rows="3" placeholder="Descreva brevemente a empresa"></textarea>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+    </div>
+    <script>
+        const btnCandidato = document.getElementById('btn-candidato');
+        const btnEmpresa = document.getElementById('btn-empresa');
+        const formCandidato = document.getElementById('form-candidato');
+        const formEmpresa = document.getElementById('form-empresa');
+
+       btnCandidato.addEventListener('click', () => {
+        formCandidato.style.display = 'grid'; // manter grid
+        formEmpresa.style.display = 'none';
+        btnCandidato.classList.add('active');
+        btnEmpresa.classList.remove('active');
+    });
+
+    btnEmpresa.addEventListener('click', () => {
+        formCandidato.style.display = 'none';
+        formEmpresa.style.display = 'grid'; // manter grid
+        btnEmpresa.classList.add('active');
+        btnCandidato.classList.remove('active');
+});
+
+    // Redirecionar para perfil quando enviar formulário de candidato
+    formCandidato.addEventListener('submit', (e) => {
+        e.preventDefault(); // Impede o envio padrão do formulário
+        window.location.href = 'perfil-candidato.html';
+    });
+
+    // Redirecionar para perfil quando enviar formulário de empresa
+    formEmpresa.addEventListener('submit', (e) => {
+        e.preventDefault(); // Impede o envio padrão do formulário
+        window.location.href = 'perfil-empresa.html';
+    });
+    </script>
+</body>
+</html>
