@@ -7,7 +7,6 @@ export class Candidato {
     cep: string;
     skills: string[];
     descricao: string;
-    senha: string;
 
     constructor(
         nome: string,
@@ -18,7 +17,7 @@ export class Candidato {
         cep: string,
         skills: string[],
         descricao: string,
-        senha: string
+
     ) {
         this.nome = nome;
         this.email = email;
@@ -28,6 +27,6 @@ export class Candidato {
         this.cep = cep;
         this.skills = skills;
         this.descricao = descricao;
-        this.senha = senha;
+        
     }
 }

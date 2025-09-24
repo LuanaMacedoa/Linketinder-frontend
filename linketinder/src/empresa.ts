@@ -13,7 +13,6 @@ export class Empresa {
     skillsProcuradas: string[];
     descricao: string;
     vagas: Vaga[];
-    senha: string;
 
     constructor(
         nome: string,
@@ -25,7 +24,6 @@ export class Empresa {
         skillsProcuradas: string[],
         descricao: string,
         vagas: Vaga[],
-        senha: string
     ) {
         this.nome = nome;
         this.email = email;
@@ -36,7 +34,7 @@ export class Empresa {
         this.skillsProcuradas = skillsProcuradas;
         this.descricao = descricao;
         this.vagas = vagas;
-        this.senha = senha;
+
     }
 
     criarVaga(titulo: string, skills: string[]) {
