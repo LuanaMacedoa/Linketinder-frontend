@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perfil Candidato - Linketinder</title>
+    <title>Perfil Candidato</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/perfil-candidato.css">
 </head>
@@ -11,91 +11,22 @@
     <nav class="navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Contato</a></li>
-        </ul>
+            <li><a href="./perfil-candidato.html">Candidato</a></li>
+            <li><a href="./perfil-empresa.html">Empresa</a></li>
+         </ul>
+        
         <input type="text" placeholder="Search">
     </nav>
-    
-    <div id="container-perfil">
-        <div class="header-perfil">
-            <a href="index.html" class="btn-voltar">
-                <img src="img/Left-arrow.svg" alt="Voltar">
-            </a>
-            <h2>Perfil do Candidato</h2>
-            <button class="btn-editar">Editar Perfil</button>
-        </div>
+        <div class="container-perfil-candidato">
+        <h2 id="boas-vindas-candidato"></h2>
 
-        <div class="perfil-content">
-            <div class="foto-section">
-                <div class="foto-perfil">
-                    <img src="" alt="Foto do perfil" id="foto-candidato">
-                </div>
-                <button class="btn-upload-foto">Alterar Foto</button>
-            </div>
-
-            <div class="info-section">
-                <div class="info-pessoal">
-                    <h3>Informações Pessoais</h3>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <label>Nome:</label>
-                            <span id="perfil-nome">-</span>
-                        </div>
-                        <div class="info-item">
-                            <label>E-mail:</label>
-                            <span id="perfil-email">-</span>
-                        </div>
-                        <div class="info-item">
-                            <label>CPF:</label>
-                            <span id="perfil-cpf">-</span>
-                        </div>
-                        <div class="info-item">
-                            <label>Idade:</label>
-                            <span id="perfil-idade">-</span>
-                        </div>
-                        <div class="info-item">
-                            <label>Estado:</label>
-                            <span id="perfil-estado">-</span>
-                        </div>
-                        <div class="info-item">
-                            <label>CEP:</label>
-                            <span id="perfil-cep">-</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="skills-section">
-                    <h3>Skills</h3>
-                    <div class="skills-tags" id="skills-container">
-                        <!-- Skills serão carregadas dinamicamente -->
-                    </div>
-                </div>
-
-                <div class="descricao-section">
-                    <h3>Descrição Pessoal</h3>
-                    <p id="perfil-descricao">
-                        Nenhuma descrição cadastrada.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="acoes-perfil">
-            <button class="btn-primary">Buscar Vagas</button>
-            <button class="btn-secondary">Ver Candidaturas</button>
-        </div>
+        <h3>Vagas disponíveis:</h3>
+        <div class="container-vagas"></div>
+            <ul id="lista-vagas">
+                
+            </ul>
     </div>
+    
 
-    <script>
-        document.querySelector('.btn-editar').addEventListener('click', () => {
-            alert('Função de edição em desenvolvimento');
-        });
-
-        document.querySelector('.btn-upload-foto').addEventListener('click', () => {
-            alert('Função de upload de foto em desenvolvimento');
-        });
-    </script>
 </body>
 </html>

@@ -11,91 +11,40 @@
     <nav class="navbar">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="#">Serviços</a></li>
-            <li><a href="#">Sobre</a></li>
-            <li><a href="#">Contato</a></li>
+            <li><a href="./perfil-candidato.html">Candidato</a></li>
+            <li><a href="./perfil-empresa.html">Empresa</a></li>
         </ul>
         <input type="text" placeholder="Search">
     </nav>
     
-    <div id="container-perfil">
-        <div class="header-perfil">
-            <a href="index.html" class="btn-voltar">
-                <img src="img/Left-arrow.svg" alt="Voltar">
-            </a>
-            <h2>Perfil da Empresa</h2>
-            <button class="btn-editar">Editar Perfil</button>
-        </div>
+    <div class="container-perfil-empresa">
+        <h2 id="boas-vindas-empresa"></h2>
 
-        <div class="perfil-content">
-            <div class="logo-section">
-                <div class="logo-empresa">
-                    <img src="img/company-placeholder.png" alt="Logo da empresa" id="logo-empresa">
-                </div>
-                <button class="btn-upload-logo">Alterar Logo</button>
-            </div>
+        <button id="btn-criar-vaga">Criar vaga</button>
 
-            <div class="info-section">
-                <div class="info-empresarial">
-                    <h3>Informações Empresariais</h3>
-                    <div class="info-grid">
-                        <div class="info-item">
-                            <label>Nome da Empresa:</label>
-                            <span id="perfil-nome">-</span>
-                        </div>
-                        <div class="info-item">
-                            <label>E-mail Corporativo:</label>
-                            <span id="perfil-email">-</span>
-                        </div>
-                        <div class="info-item">
-                            <label>CNPJ:</label>
-                            <span id="perfil-cnpj">-</span>
-                        </div>
-                        <div class="info-item">
-                            <label>País:</label>
-                            <span id="perfil-pais">-</span>
-                        </div>
-                        <div class="info-item">
-                            <label>Estado:</label>
-                            <span id="perfil-estado">-</span>
-                        </div>
-                        <div class="info-item">
-                            <label>CEP:</label>
-                            <span id="perfil-cep">-</span>
-                        </div>
-                    </div>
-                </div>
+          <div id="modal-criar-vaga">
+            <h3>Criar Nova Vaga</h3>
+            <label for="titulo-vaga">Título:</label>
+            <input type="text" id="titulo-vaga">
+            <br><br>
+            <label for="skills-vaga">Skills (separadas por vírgula):</label>
+            <input type="text" id="skills-vaga">
+            <br><br>
+            <button id="salvar-vaga">Salvar</button>
+            <button id="fechar-modal">Fechar</button>
+          </div>
+    
 
-                <div class="skills-section">
-                    <h3>Skills Procuradas</h3>
-                    <div class="skills-tags" id="skills-container">
-                        <!-- Skills serão carregadas dinamicamente -->
-                    </div>
-                </div>
+            <h3>Gráfico de skills</h3>
+            <div id="grafico-candidatos"></div>
 
-                <div class="descricao-section">
-                    <h3>Descrição da Empresa</h3>
-                    <p id="perfil-descricao">
-                        Nenhuma descrição cadastrada.
-                    </p>
-                </div>
+            <h3>Candidatos cadastrados:</h3>
+            <div class="container-candidatos">
+                <ul id="lista-candidatos">
+
+                </ul>
             </div>
         </div>
-
-        <div class="acoes-perfil">
-            <button class="btn-primary">Buscar Candidatos</button>
-            <button class="btn-secondary">Ver Candidaturas</button>
-        </div>
-    </div>
-
-    <script>
-        document.querySelector('.btn-editar').addEventListener('click', () => {
-            alert('Função de edição em desenvolvimento');
-        });
-
-        document.querySelector('.btn-upload-logo').addEventListener('click', () => {
-            alert('Função de upload de logo em desenvolvimento');
-        });
-    </script>
+    
 </body>
 </html>
