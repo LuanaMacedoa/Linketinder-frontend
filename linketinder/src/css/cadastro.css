@@ -1,0 +1,149 @@
+#container-cadastro{
+    background-color: #16072a;
+    height: 91vh;
+    width: 80vh;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+input,textarea{
+    background-color:rgb(209, 209, 235);
+    border-radius: 8px;
+}
+
+#form-candidato{
+    background-color:#60519b;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    height: 80vh;
+    border-radius: 10px;
+}
+
+
+.form-selector {
+    display: flex;
+    align-items: center;        
+    justify-content: center;    
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    position: relative;         
+}
+
+.form-selector a {
+    position: absolute;
+    left: 0;                    
+}
+
+.form-selector button {
+    min-width: 30px;          
+    height: 30px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #16072a;
+    color:rgb(209, 209, 235);
+}
+
+#form-candidato h3 {
+  grid-column: 1 / -1;   
+  justify-self: center;    
+  font-size: 25px;
+  margin: 10px 0;
+}
+
+#form-candidato {
+  display: grid;
+  grid-template-columns: 120px 1fr; 
+  gap: 10px 15px;                   
+  align-items: center;
+  width: 100%;
+}
+
+#form-candidato label {
+  text-align: right;
+}
+
+#form-candidato input,
+#form-candidato textarea {
+  width: 80%;
+  padding: 5px;
+}
+
+h3,label{
+    color: #1f0d38 ;
+}
+
+#form-candidato button {
+  grid-column: 1 / -1;    
+  justify-self: center;   
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #2b124c;
+  color:rgb(209, 209, 235);
+  width: 30%;
+  border: solid #1f0d38;
+
+}
+
+#form-candidato button:hover, .form-selector button:hover{
+    color:  #60519b;
+}
+
+
+
+
+/* css empresas */
+
+#form-empresa {
+    background-color: #60519b;
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 10px 15px;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    border-radius: 10px;
+}
+
+#form-empresa h3 {
+    grid-column: 1 / -1;
+    justify-self: center;
+    font-size: 25px;
+    margin: 10px 0;
+    color: #1f0d38;
+}
+
+#form-empresa label {
+    text-align: right;
+    color: #1f0d38;
+    font-size: 15px;
+}
+
+#form-empresa input,
+#form-empresa textarea {
+    width: 80%;
+    padding: 5px;
+}
+
+#form-empresa button {
+    grid-column: 1 / -1;
+    justify-self: center;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #2b124c;
+    color: rgb(209, 209, 235);
+    width: 30%;
+    border: solid #1f0d38;
+}
+
+#form-empresa button:hover {
+    color: #60519b;
+}
+
+

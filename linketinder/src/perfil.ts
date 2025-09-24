@@ -1,0 +1,1 @@
+//logica de perfil(candidtao e empresa)

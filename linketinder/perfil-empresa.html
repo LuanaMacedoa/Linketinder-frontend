@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Empresa - Linketinder</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/perfil-empresa.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="#">Serviços</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+        <input type="text" placeholder="Search">
+    </nav>
+    
+    <div id="container-perfil">
+        <div class="header-perfil">
+            <a href="index.html" class="btn-voltar">
+                <img src="./public/img/Left-arrow.svg" alt="Voltar">
+            </a>
+            <h2>Perfil da Empresa</h2>
+            <button class="btn-editar">Editar Perfil</button>
+        </div>
+
+        <div class="perfil-content">
+            <div class="logo-section">
+                <div class="logo-empresa">
+                    <img src="img/company-placeholder.png" alt="Logo da empresa" id="logo-empresa">
+                </div>
+                <button class="btn-upload-logo">Alterar Logo</button>
+            </div>
+
+            <div class="info-section">
+                <div class="info-empresarial">
+                    <h3>Informações Empresariais</h3>
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <label>Nome da Empresa:</label>
+                            <span id="perfil-nome">-</span>
+                        </div>
+                        <div class="info-item">
+                            <label>E-mail Corporativo:</label>
+                            <span id="perfil-email">-</span>
+                        </div>
+                        <div class="info-item">
+                            <label>CNPJ:</label>
+                            <span id="perfil-cnpj">-</span>
+                        </div>
+                        <div class="info-item">
+                            <label>País:</label>
+                            <span id="perfil-pais">-</span>
+                        </div>
+                        <div class="info-item">
+                            <label>Estado:</label>
+                            <span id="perfil-estado">-</span>
+                        </div>
+                        <div class="info-item">
+                            <label>CEP:</label>
+                            <span id="perfil-cep">-</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skills-section">
+                    <h3>Skills Procuradas</h3>
+                    <div class="skills-tags" id="skills-container">
+                        <!-- Skills serão carregadas dinamicamente -->
+                    </div>
+                </div>
+
+                <div class="descricao-section">
+                    <h3>Descrição da Empresa</h3>
+                    <p id="perfil-descricao">
+                        Nenhuma descrição cadastrada.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="acoes-perfil">
+            <button class="btn-primary">Criar vaga</button>
+            <button class="btn-secondary">Ver Candidaturas</button>
+        </div>
+
+        <form id="form-criar-vaga" class="form-criar-vaga">
+            <label for="vaga-titulo">Título da vaga:</label>
+            <input type="text" id="vaga-titulo" placeholder="'Ex: dev front-end">
+
+            <label for="vagas-skills">Skills (separadas por vígula):</label>
+            <input type="text" id="vagas-skills" placeholder="Ex: html, css">
+
+            <button type="submit">Adicionar Vaga</button>
+        </form>
+
+        <div id="lista-vagas"></div>
+    </div>
+
+    <script>
+        document.querySelector('.btn-editar').addEventListener('click', () => {
+            alert('Função de edição em desenvolvimento');
+        });
+
+        document.querySelector('.btn-upload-logo').addEventListener('click', () => {
+            alert('Função de upload de logo em desenvolvimento');
+        });
+    </script>
+</body>
+</html>

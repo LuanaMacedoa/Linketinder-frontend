@@ -1,0 +1,1 @@
+// funcoes para amnipular localstorage
