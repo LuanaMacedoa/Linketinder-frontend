@@ -6,51 +6,55 @@ import { salvarCandidato, salvarEmpresa } from "./storage";
 import { skillsToArray } from "./utils";
 
 const btnCandidato = document.getElementById("btn-candidato") as HTMLButtonElement;
-const bntEmpresa = document.getElementById("btn-empresa") as HTMLButtonElement;
+const btnEmpresa = document.getElementById("btn-empresa") as HTMLButtonElement;
 const formCandidato = document.getElementById("form-candidato") as HTMLFormElement;
 const formEmpresa = document.getElementById("form-empresa") as HTMLFormElement;
 
-btnCandidato.addEventListener("click",()=>{
+// Configurar eventos de clique para alternar entre formulários
+btnCandidato.addEventListener("click", () => {
     formCandidato.style.display = "grid";
     formEmpresa.style.display = "none";
 
-    btnCandidato.classList.add("acitve");
-    bntEmpresa.classList.remove("active");
+    btnCandidato.classList.add("active");
+    btnEmpresa.classList.remove("active");
 });
 
-bntEmpresa.addEventListener("click",()=>{
+btnEmpresa.addEventListener("click", () => {
     formCandidato.style.display = "none";
     formEmpresa.style.display = "grid";
 
-    bntEmpresa.classList.add("active");
+    btnEmpresa.classList.add("active");
     btnCandidato.classList.remove("active");
 });
 
+// Evento de submissão para o formulário de candidato
 formCandidato.addEventListener("submit", (e) => {
-    e.preventDefault();
+    e.preventDefault(); // Impede o comportamento padrão de submissão do formulário
 
+    // Criar objeto candidato com os valores dos campos
     const candidato = new Candidato(
-    (document.getElementById("cand-nome") as HTMLInputElement).value,
-    (document.getElementById("cand-email") as HTMLInputElement).value,
-    (document.getElementById("cand-cpf") as HTMLInputElement).value,
-    (document.getElementById("cand-formacao") as HTMLInputElement).value,
-    (document.getElementById("cand-estado") as HTMLInputElement).value,
-    (document.getElementById("cand-cep") as HTMLInputElement).value,
-    skillsToArray((document.getElementById("cand-skills") as HTMLInputElement).value),
-    (document.getElementById("cand-descricao") as HTMLTextAreaElement).value,
-    
+        (document.getElementById("cand-nome") as HTMLInputElement).value,
+        (document.getElementById("cand-email") as HTMLInputElement).value,
+        (document.getElementById("cand-cpf") as HTMLInputElement).value,
+        (document.getElementById("cand-formacao") as HTMLInputElement).value,
+        (document.getElementById("cand-estado") as HTMLInputElement).value,
+        (document.getElementById("cand-cep") as HTMLInputElement).value,
+        skillsToArray((document.getElementById("cand-skills") as HTMLInputElement).value),
+        (document.getElementById("cand-descricao") as HTMLTextAreaElement).value
     );
 
+    // Salvar candidato no localStorage
     salvarCandidato(candidato);
-    window.location.href = "perfil-candidato.html"
-
-
+    
+    // Redirecionar para a página de perfil do candidato
+    window.location.href = "perfil-candidato.html";
 });
 
+// Evento de submissão para o formulário de empresa
+formEmpresa.addEventListener("submit", (e) => {
+    e.preventDefault(); // Impede o comportamento padrão de submissão do formulário
 
-formEmpresa.addEventListener("submit", (e) =>{
-    e.preventDefault();
-
+    // Criar objeto empresa com os valores dos campos
     const empresa = new Empresa(
         (document.getElementById("emp-nome") as HTMLInputElement).value,
         (document.getElementById("emp-email") as HTMLInputElement).value,
@@ -59,10 +63,13 @@ formEmpresa.addEventListener("submit", (e) =>{
         (document.getElementById("emp-estado") as HTMLInputElement).value,
         (document.getElementById("emp-cep") as HTMLInputElement).value,
         skillsToArray((document.getElementById("emp-skills") as HTMLInputElement).value),
-        (document.getElementById("emp-descricao") as HTMLInputElement).value,
-        []
+        (document.getElementById("emp-descricao") as HTMLTextAreaElement).value,
+        [] // Array vazio para vagas
     );
 
+    // Salvar empresa no localStorage
     salvarEmpresa(empresa);
-    window.location.href = "perfil-empresa.html"
+    
+    // Redirecionar para a página de perfil da empresa
+    window.location.href = "perfil-empresa.html";
 });

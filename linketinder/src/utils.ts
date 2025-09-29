@@ -1,19 +1,29 @@
-// funcoes axuiliares (gerar ID, validação, etc)
-import { Candidato } from "./candidatos";
-import { Empresa } from "./empresa";
-
-
-export function loginCandidato(email: string): Candidato | undefined{
-    const candidatos: Candidato[] = JSON.parse(localStorage.getItem("candidatos") || "[]");
-    return candidatos.find(c => c.email === email);
+// Função para converter string de skills em array
+export function skillsToArray(skillsString: string): string[] {
+    if (!skillsString.trim()) {
+        return [];
+    }
+    return skillsString.split(',').map(skill => skill.trim()).filter(skill => skill !== '');
 }
 
-export function loginEmpresa(email: string): Empresa | undefined{
-    const empresas: Empresa[] = JSON.parse(localStorage.getItem("empresas") || "[]");
-    return empresas.find(e => e.email == email);
+
+// Função para gerar dados para o gráfico de skills
+export function gerarDadosGraficoSkills(candidatos: any[]): { labels: string[], data: number[] } {
+    const skills = new Map<string, number>();
     
-}
-
-export function skillsToArray(skills: string): string[]{
-    return skills.split(",").map(s=>s.trim()).filter(s=> s !== "");
+    candidatos.forEach(candidato => {
+        candidato.skills.forEach((skill: string) => {
+            skills.set(skill, (skills.get(skill) || 0) + 1);
+        });
+    });
+    
+    // Ordenar as skills por quantidade e pegar as top 10
+    const skillsOrdenadas = Array.from(skills.entries())
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+    
+    return {
+        labels: skillsOrdenadas.map(entry => entry[0]),
+        data: skillsOrdenadas.map(entry => entry[1])
+    };
 }
